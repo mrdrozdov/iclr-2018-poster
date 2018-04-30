@@ -1,0 +1,14 @@
+\begin{thebibliography}{}
+
+\bibitem[Jorge et~al., 2016]{Jorge:2016learning}
+Jorge, E., K{\aa}geb{\"a}ck, M., and Gustavsson, E. (2016).
+\newblock Learning to play guess who? and inventing a grounded language as a
+  consequence.
+\newblock In {\em Deep Reinforcement Learning Workshop at NIPS}.
+
+\bibitem[Lazaridou et~al., 2017]{Lazaridou:2017multi}
+Lazaridou, A., Peysakhovich, A., and Baroni, M. (2017).
+\newblock Multi-agent cooperation and the emergence of (natural) language.
+\newblock In {\em Proceedings of ICLR}.
+
+\end{thebibliography}

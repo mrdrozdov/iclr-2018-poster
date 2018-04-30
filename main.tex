@@ -123,6 +123,25 @@
 \end{tikzpicture} 
 }
 
+\addtobeamertemplate{headline}{} 
+{
+\begin{tikzpicture}[remember picture,overlay] 
+\node [shift={(16.5 cm,6cm)}] at (current page.south west) {
+  \begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,width=\onecolwid]
+  \begin{minipage}{.3\textwidth}
+  \includegraphics[width=\textwidth]{links/qr_code_blue_bg}
+  \end{minipage} \quad
+  \begin{minipage}{.6\textwidth}
+  {\normalsize
+    Paper (arXiv) \\
+    \href{https://arxiv.org/abs/1705.10369}{1705.10369}
+  }
+  \end{minipage}
+  \end{tcolorbox}
+}; 
+\end{tikzpicture} 
+}
+
 \begin{frame}[t] % The whole poster is enclosed in one beamer frame
 
 \begin{columns}[t] % The whole poster consists of three major columns, the second of which is split into two columns twice - the [t] option aligns each column's content to the top
@@ -137,7 +156,7 @@
 
 \begin{block}{Overview}
 
-This works presents a novel referential game where the sender and receiver are grounded in two separate modalities and have an adaptive conversation length.
+This works presents a novel referential game where the sender and receiver are grounded in two separate modalities, have an adaptive conversation length, and learn a communication protocol.
 
 \vspace{5mm}
 
@@ -149,8 +168,11 @@ We find that the agents vary conversation length according to the difficulty of 
 
 \begin{block}{Referential Games}
 
+\vspace{-15mm}
+
 \begin{center}
-\includegraphics[width=0.8\linewidth]{figures/lazaridou}
+% \includegraphics[width=0.8\linewidth]{figures/lazaridou}
+\includegraphics[width=0.8\linewidth]{/Users/adrozdov/Downloads/ref_game_lazaridou.pdf}
 \end{center}
 
 \vspace{5mm}
@@ -165,29 +187,29 @@ Other setups have been studied such as one where the Sender and Receiver have a 
 
 \vspace{5mm}
 
-\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black]
-% \vspace{5mm}
+% \begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black]
+% % \vspace{5mm}
 
-\begin{minipage}{.3\textwidth}
-\includegraphics[width=\textwidth]{links/qr_paper_blue_bg}
-\end{minipage} \quad
-\begin{minipage}{.6\textwidth}
-  Paper (arXiv) \\
-  \href{https://arxiv.org/abs/1705.10369}{1705.10369}
-\end{minipage}
+% \begin{minipage}{.3\textwidth}
+% \includegraphics[width=\textwidth]{links/qr_paper_blue_bg}
+% \end{minipage} \quad
+% \begin{minipage}{.6\textwidth}
+%   Paper (arXiv) \\
+%   \href{https://arxiv.org/abs/1705.10369}{1705.10369}
+% \end{minipage}
 
-%   \centering
-%   Code \\
-%   \href{https://github.com/nyu-dl/MultimodalGame}{https://github.com/nyu-dl/MultimodalGame}
+% %   \centering
+% %   Code \\
+% %   \href{https://github.com/nyu-dl/MultimodalGame}{https://github.com/nyu-dl/MultimodalGame}
 
-%   \vspace{5mm}
+% %   \vspace{5mm}
   
-%   \centering
-%   Paper \\
-%   \href{https://arxiv.org/abs/1705.10369}{https://arxiv.org/abs/1705.10369}
+% %   \centering
+% %   Paper \\
+% %   \href{https://arxiv.org/abs/1705.10369}{https://arxiv.org/abs/1705.10369}
   
-% \vspace{5mm}
-\end{tcolorbox}
+% % \vspace{5mm}
+% \end{tcolorbox}
 
 %------------------------------------------------
 
@@ -208,29 +230,40 @@ Other setups have been studied such as one where the Sender and Receiver have a 
 \begin{block}{This Work}
 
 \begin{center}
-\includegraphics[width=0.8\linewidth]{figures/mmg}
+% \includegraphics[width=0.8\linewidth]{figures/mmg}
+\includegraphics[width=0.8\linewidth]{/Users/adrozdov/Downloads/ref_game_evtimova_2.pdf}
 \end{center}
 
 \begin{enumerate}
 \item[1.] The image features are extracted using a pre-trained network.
 \item[2.] The Sender incorporates the image and the Receiver's message (if it's available) to generate a message for the Receiver.
 \item[3.] The Receiver incorporates the class descriptors, the Sender's message, and its own hidden state to generate a message for the Sender.
-\item[4.] When the Receiver terminates the conversation it makes prediction about the image's most likely class.
+\item[4.] When the conversation terminates, the Receiver predicts the image's most likely class.
 \end{enumerate}
 
+\vspace{22mm}
+
+\textbf{Per-Instance Loss:}
+
 \begin{align*}
-Loss &= Sender + Receiver + Regularization
+L^i &= L^i_{c} + L^i_{r} - H^i_{stop,sen,rec}
 \end{align*}
+
+\begin{itemize}
+\item $L^i_{c}$ is the classification loss.
+\item $L^i_{r}$ is the reinforcement learning loss.
+\item $H^i_{stop,sen,rec}$ is the entropy regularization on the Sender's messages, the Receiver's messages, and the Receiver's stop-bit.
+\end{itemize}
 
 \end{block}
 
 \begin{block}{Experimental Setup}
 
-\begin{itemize}
-\item In-Domain Train/Validation/Test
-\item Out-of-Domain Test
-\item Transfer Test
-\end{itemize}
+\textbf{In-Domain:} 60 mammals with 550 images per mammal for training, 50 validation, and 20 test.
+
+\textbf{Out-of-Domain:} 10 mammals with 20 images.
+
+\textbf{Transfer:} 10 insects with 100 images.
 
 \end{block}
 
@@ -244,35 +277,40 @@ Loss &= Sender + Receiver + Regularization
 
 \begin{block}{Results}
 
-\begin{minipage}{.3\textwidth}
-  \centering
-  \includegraphics[width=\textwidth]{figures/corr_conv_len_difficulty}
-\end{minipage} \quad
-\begin{minipage}{.3\textwidth}
-  \centering
-  \includegraphics[width=\textwidth]{figures/acc_top-6_adaptive_conv-len_in_out-line}
-\end{minipage}
-\begin{minipage}{.3\textwidth}
-  \centering
-  \includegraphics[width=\textwidth]{figures/SR_msg_entropy_adaptive_indomain_pt_best_02}
+\begin{minipage}{\textwidth}
+\centering
+\includegraphics[width=\textwidth]{/Users/adrozdov/Research/MultimodalGame-Private/poster_figures.pdf}
 \end{minipage}
 
-\vspace{5mm}
+% \begin{minipage}{.3\textwidth}
+%   \centering
+%   \includegraphics[width=\textwidth]{figures/corr_conv_len_difficulty}
+% \end{minipage} \quad
+% \begin{minipage}{.3\textwidth}
+%   \centering
+%   \includegraphics[width=\textwidth]{figures/acc_top-6_adaptive_conv-len_in_out-line}
+% \end{minipage}
+% \begin{minipage}{.3\textwidth}
+%   \centering
+%   \includegraphics[width=\textwidth]{figures/SR_msg_entropy_adaptive_indomain_pt_best_02}
+% \end{minipage}
 
-\begin{minipage}{.3\textwidth}
-  \centering
-  \includegraphics[width=\textwidth]{figures/R_pred_entropy_adaptive_in_out_big.pdf}
-\end{minipage} \quad
-\begin{minipage}{.3\textwidth}
-  \centering
-  \includegraphics[width=\textwidth]{figures/mammal_kangaroo}
-\end{minipage} \quad
-\begin{minipage}{.3\textwidth}
-  \centering
-  \includegraphics[width=\textwidth]{figures/sender_not_trained}
-\end{minipage}
+% \vspace{5mm}
 
-\vspace{5mm}
+% \begin{minipage}{.3\textwidth}
+%   \centering
+%   \includegraphics[width=\textwidth]{figures/R_pred_entropy_adaptive_in_out_big.pdf}
+% \end{minipage} \quad
+% \begin{minipage}{.3\textwidth}
+%   \centering
+%   \includegraphics[width=\textwidth]{figures/mammal_kangaroo}
+% \end{minipage} \quad
+% \begin{minipage}{.3\textwidth}
+%   \centering
+%   \includegraphics[width=\textwidth]{figures/sender_not_trained}
+% \end{minipage}
+
+% \vspace{5mm}
 
 % \begin{minipage}{.475\textwidth}
 % The performance correlates with the difficulty of the task.
@@ -290,6 +328,15 @@ Loss &= Sender + Receiver + Regularization
 
 
 \begin{block}{Analysis}
+
+\begin{itemize}
+\item There's a significant negative relationship between class difficulty and the average conversation length [Plot A].
+\item Examples for which conversations are shorter are better classified [Plot B].
+\item As the conversation progress, the Receiver's messages become more specific [Plot C right] and the Sender's messages become less certain [Plot C left].
+\item The conversation length correlates well with the Receiver's prediction confidence [Plot D].
+\item As the Receiver gathers more information, similar but incorrect categories receive smaller probabilities than the correct one [Plot E].
+\item The learned protocol was more effective when communication was bidirectional [Plot F].
+\end{itemize}
 
 \end{block}
 
