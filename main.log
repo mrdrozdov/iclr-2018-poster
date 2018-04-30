@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  30 APR 2018 04:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  30 APR 2018 04:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1466,21 +1466,20 @@ LaTeX Font Info:    Try loading font information for T1+lmr on input line 379.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-</Users/adrozdov/Downloads/ref_game_lazaridou.pdf, id=51, 397.485pt x 288.07625
-pt>
-File: /Users/adrozdov/Downloads/ref_game_lazaridou.pdf Graphic file (type pdf)
- <use /Users/adrozdov/Downloads/ref_game_lazaridou.pdf>
-Package pdftex.def Info: /Users/adrozdov/Downloads/ref_game_lazaridou.pdf used 
-on input line 379.
+<figures/ref_game_lazaridou.pdf, id=51, 397.485pt x 288.07625pt>
+File: figures/ref_game_lazaridou.pdf Graphic file (type pdf)
+
+<use figures/ref_game_lazaridou.pdf>
+Package pdftex.def Info: figures/ref_game_lazaridou.pdf used on input line 379.
+
 (pdftex.def)             Requested size: 595.40625pt x 431.56822pt.
 
-</Users/adrozdov/Downloads/ref_game_evtimova_2.pdf, id=54, 432.61626pt x 211.79
-124pt>
-File: /Users/adrozdov/Downloads/ref_game_evtimova_2.pdf Graphic file (type pdf)
+<figures/ref_game_evtimova_2.pdf, id=54, 432.61626pt x 211.79124pt>
+File: figures/ref_game_evtimova_2.pdf Graphic file (type pdf)
 
- <use /Users/adrozdov/Downloads/ref_game_evtimova_2.pdf>
-Package pdftex.def Info: /Users/adrozdov/Downloads/ref_game_evtimova_2.pdf used
- on input line 379.
+<use figures/ref_game_evtimova_2.pdf>
+Package pdftex.def Info: figures/ref_game_evtimova_2.pdf used on input line 379
+.
 (pdftex.def)             Requested size: 595.40625pt x 291.51924pt.
 LaTeX Font Info:    Calculating math sizes for size <37.03> on input line 379.
 
@@ -1501,20 +1500,16 @@ LaTeX Font Info:    Try loading font information for TS1+lmss on input line 379
 (/usr/local/texlive/2017/texmf-dist/tex/latex/lm/ts1lmss.fd
 File: ts1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-</Users/adrozdov/Research/MultimodalGame-Private/poster_figures.pdf, id=55, 625
-.90656pt x 316.07625pt>
-File: /Users/adrozdov/Research/MultimodalGame-Private/poster_figures.pdf Graphi
-c file (type pdf)
+<figures/poster_figures.pdf, id=55, 625.90656pt x 316.07625pt>
+File: figures/poster_figures.pdf Graphic file (type pdf)
 
-<use /Users/adrozdov/Research/MultimodalGame-Private/poster_figures.pdf>
-Package pdftex.def Info: /Users/adrozdov/Research/MultimodalGame-Private/poster
-_figures.pdf used on input line 379.
+<use figures/poster_figures.pdf>
+Package pdftex.def Info: figures/poster_figures.pdf used on input line 379.
 (pdftex.def)             Requested size: 1569.70802pt x 792.7207pt.
-
-(./main.bbl) <logos/AI-logo.png, id=56, 833.9958pt x 523.7166pt>
+ (./main.bbl)
+<logos/AI-logo.png, id=56, 833.9958pt x 523.7166pt>
 File: logos/AI-logo.png Graphic file (type png)
-
-<use logos/AI-logo.png>
+ <use logos/AI-logo.png>
 Package pdftex.def Info: logos/AI-logo.png used on input line 379.
 (pdftex.def)             Requested size: 135.92357pt x 85.35826pt.
 
@@ -1551,12 +1546,12 @@ Overfull \hbox (2.20186pt too wide) has occurred while \output is active
 [1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
  <./logos/AI-logo.png> <./logos/fair-wordmark-style-1.png> <./logos/nyu_short_c
-olor.png> <./links/qr_code_blue_bg.png> </Users/adrozdov/Downloads/ref_game_laz
-aridou.pdf> </Users/adrozdov/Downloads/ref_game_evtimova_2.pdf
+olor.png> <./links/qr_code_blue_bg.png> <./figures/ref_game_lazaridou.pdf> <./f
+igures/ref_game_evtimova_2.pdf
 
-pdfTeX warning: pdflatex (file /Users/adrozdov/Downloads/ref_game_evtimova_2.pd
-f): PDF inclusion: multiple pdfs with page group included in a single page
-> </Users/adrozdov/Research/MultimodalGame-Private/poster_figures.pdf>]
+pdfTeX warning: pdflatex (file ./figures/ref_game_evtimova_2.pdf): PDF inclusio
+n: multiple pdfs with page group included in a single page
+> <./figures/poster_figures.pdf>]
 \tf@nav=\write8
 \openout8 = `main.nav'.
 
@@ -1568,8 +1563,7 @@ f): PDF inclusion: multiple pdfs with page group included in a single page
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 381.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 381.
-
-(./main.aux)
+ (./main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 381.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 381.
 Package rerunfilecheck Info: File `main.out' has not changed.
@@ -1581,9 +1575,9 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 35361 strings out of 492995
- 730394 string characters out of 6132704
- 862520 words of memory out of 5000000
+ 35360 strings out of 492995
+ 730024 string characters out of 6132704
+ 861988 words of memory out of 5000000
  38237 multiletter control sequences out of 15000+600000
  96464 words of font info for 97 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1599,7 +1593,7 @@ mbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmmi12.pfb>
 017/texmf-dist/fonts/type1/public/lm/lmss17.pfb></usr/local/texlive/2017/texmf-
 dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2017/texmf-dist/fon
 ts/type1/public/lm/lmsy10.pfb>
-Output written on main.pdf (1 page, 592072 bytes).
+Output written on main.pdf (1 page, 592001 bytes).
 PDF statistics:
  156 PDF objects out of 1000 (max. 8388607)
  97 compressed objects within 1 object stream
